@@ -1,0 +1,75 @@
+========================
+	PUSH_SWAP
+========================
+
+#1 Create 2 satck called 'a' and 'b'
+#2 Create a program with a sorting algorithm
+#3 Operations authorised: swap, rotate, reverse rotate, push
+#4 Output operations done
+
+========================
+	PARSING
+========================
+
+#1 Create a linked list
+#2 Must be a doubly list
+#3 Could be circular (no utility here)
+
+🭹>Declare pointers to two linked lists
+	└──>Set both to NULL
+🭹>Handle input by split
+🭹>Handle input errors. (min 2 args + char overflow)
+	└──>If input errors, return error
+🭹>Convert in int(long)
+	└──>If overflow, return error
+🭹>Put args in stack a
+🭹>Go algo if not sorted
+
+========================
+	ALGO
+========================
+
+Implement command
+if only 2 args just swap if needed
+Sort with three arguments
+6 posibilities:
+1 2 3 already sorted
+1 3 2 rra sa
+2 1 3 sa
+2 3 1 rra
+3 1 2 ra
+3 2 1 sa rra
+Sort with more (5 and plus)
+Turk Algorithm
+
+push_swap
+│
+├── libft/
+│   │
+│   ├── src_libft/
+│   │   └──...
+│   │
+│   ├── src_ft_printf/
+│   │   └──...
+│   │
+│   ├── src_get_next_line/
+│   │   └──...
+│   │
+│   ├── includes/
+│   │   ├── libft.h
+│   │   ├── get_next_line.h
+│   │   └── printh.h
+│   │
+│   └── Makefile
+│
+├── src/
+│   ├── main.c
+│   ├── utils.c
+│   └── ...
+│
+├── includes/
+│   └── push_swap.h
+│
+└── Makefile
+
+make && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap "1 3 3"
