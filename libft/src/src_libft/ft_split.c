@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 17:10:48 by thbasse           #+#    #+#             */
-/*   Updated: 2024/07/22 11:41:55 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/04/23 13:38:58 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
-	if (!str_count(s, c))
-		exit (1);
 	if (s == NULL)
 		return (NULL);
 	arr = (char **)malloc(sizeof(char *) * (str_count(s, c) + 1));
