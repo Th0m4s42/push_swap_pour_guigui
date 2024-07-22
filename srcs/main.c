@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:41:07 by thbasse           #+#    #+#             */
-/*   Updated: 2024/07/22 14:00:18 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/07/22 14:12:13 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
+	if (argc == 2)
+		free_argv (argv);
 	free_stack(&a);
 	return (0);
 }

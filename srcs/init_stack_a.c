@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:05:16 by thbasse           #+#    #+#             */
-/*   Updated: 2024/07/22 13:43:28 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/07/22 14:22:44 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,21 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
+		{
 			free_error(a);
+			free_argv(argv);
+		}
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
+		{
 			free_error(a);
+			free_argv(argv);
+		}
 		if (error_duplicate(*a, (int)n))
+		{
 			free_error(a);
+			free_argv(argv);
+		}
 		affix_node(a, (int)n);
 		i++;
 	}
