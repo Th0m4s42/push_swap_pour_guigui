@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:41:07 by thbasse           #+#    #+#             */
-/*   Updated: 2024/06/11 10:03:38 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/07/22 11:27:00 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	else
 		argv++;
-	init_stack_a(&a, argv, argc);
+	init_stack_a(&a, argv);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
@@ -35,8 +35,8 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
-	free_stack(&a);
 	if (argc == 2)
-		free_argv(argv);
+		free_argv (argv);
+	free_stack(&a);
 	return (0);
 }

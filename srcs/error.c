@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 08:19:29 by thbasse           #+#    #+#             */
-/*   Updated: 2024/04/27 14:29:09 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/07/22 12:07:43 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,16 @@ void	free_argv(char **argv)
 	int	i;
 
 	i = 0;
-	if (argv == NULL || *argv == NULL)
+	if (argv == NULL)
 		return ;
 	while (argv[i])
 		free(argv[i++]);
 	free(argv);
 }
 
-void	free_error(t_stack_node **a, char **argv, int argc)
+void	free_error(t_stack_node **a)
 {
 	free_stack(a);
-	if (argc == 2)
-		free_argv(argv);
 	write(2, "Error\n", 6);
 	exit(1);
 }

@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:05:16 by thbasse           #+#    #+#             */
-/*   Updated: 2024/04/27 14:32:04 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/07/22 11:07:57 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	affix_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_node **a, char **argv, int argc)
+void	init_stack_a(t_stack_node **a, char **argv)
 {
 	long	n;
 	int		i;
@@ -70,13 +70,13 @@ void	init_stack_a(t_stack_node **a, char **argv, int argc)
 	i = 0;
 	while (argv[i])
 	{
-		if (error_syntax(argv[i]) == 1)
-			free_error(a, argv, argc);
+		if (error_syntax(argv[i]))
+			free_error(a);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
-			free_error(a, argv, argc);
-		if (error_duplicate(*a, (int)n) == 1)
-			free_error(a, argv, argc);
+			free_error(a);
+		if (error_duplicate(*a, (int)n))
+			free_error(a);
 		affix_node(a, (int)n);
 		i++;
 	}

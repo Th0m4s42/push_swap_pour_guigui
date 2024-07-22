@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:01:28 by thbasse           #+#    #+#             */
-/*   Updated: 2024/06/10 10:22:09 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/07/22 11:08:16 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 /////Handle input//////////////////////////////////////////////
-void			init_stack_a(t_stack_node **a, char **argv, int argc);
+void			init_stack_a(t_stack_node **a, char **argv);
 /////Handle errors/////////////////////////////////////////////
 void			free_argv(char **argv);
-void			free_error(t_stack_node **a, char **argv, int argc);
+void			free_error(t_stack_node **a);
 int				error_duplicate(t_stack_node *a, int n);
 int				error_syntax(char *str);
 /////Utils/////////////////////////////////////////////////////
