@@ -6,7 +6,7 @@
 /*   By: thbasse <thbasse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:41:07 by thbasse           #+#    #+#             */
-/*   Updated: 2024/07/23 14:07:10 by thbasse          ###   ########.fr       */
+/*   Updated: 2024/07/23 14:25:27 by thbasse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	main(int argc, char **argv)
 	else if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
-			if (argv == NULL)
-				return (1);
+		if (argv == NULL)
+			return (1);
 	}
 	else
 		argv++;
